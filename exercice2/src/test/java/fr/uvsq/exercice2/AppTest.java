@@ -1,38 +1,47 @@
 package fr.uvsq.exercice2;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.Properties;
+
+import org.junit.Test;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
+    
 {
     /**
      * Create the test case
      *
      * @param testName name of the test case
      */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+    
 
     /**
      * @return the suite of tests being tested
      */
-    public static Test suite()
+   @Test
+    public void test()
     {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+        Vendeur v= new Vendeur(10);
+        Employe e= new Employe(2010);
+        Vendeur v2= new Vendeur(20);
+        Employe e2= new Employe(2005);
+        ArrayList<AllEmploye> listEmploye= new ArrayList<AllEmploye>();
+        listEmploye.add(e);
+        listEmploye.add(e2);
+        listEmploye.add(v);
+        listEmploye.add(v2);
+        double saliareTotal=0;
+        for(int i=0; i<listEmploye.size();i++) {
+        	saliareTotal+=listEmploye.get(i).salaire();
+        }
+        
+        System.out.println("Salaire total:  "+saliareTotal);
+  
+        
     }
 }
