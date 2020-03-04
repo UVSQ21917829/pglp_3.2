@@ -3,7 +3,6 @@ package fr.uvsq.exercice2;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Properties;
 
 import org.junit.Test;
 
@@ -41,7 +40,6 @@ public class AppTest
         for(int i=0; i<listEmploye.size();i++) {
         	saliareTotal+=listEmploye.get(i).salaire();
         }
-        
         System.out.println("Salaire total:  "+saliareTotal);
   
         
